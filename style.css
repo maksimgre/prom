@@ -82,7 +82,7 @@ h3 {
 /* Hero */
 
 .hero {
-    background: #0f172a;
+    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('img_1.png') center/cover no-repeat;
     color: #fff;
     padding: 80px 24px 80px;
     text-align: center;
