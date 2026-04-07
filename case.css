@@ -1,0 +1,336 @@
+/* Case study page styles */
+
+.case-hero {
+    background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('img_1.png') center/cover no-repeat !important;
+    color: #fff;
+    padding: 60px 24px 60px;
+}
+
+.back-link {
+    display: inline-block;
+    color: #94a3b8;
+    text-decoration: none;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+.case-hero h1 {
+    font-size: 2.2rem;
+    max-width: 800px;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.case-hero-sub {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    max-width: 700px;
+}
+
+/* Overview grid */
+
+.case-overview {
+    padding: 40px 0;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.overview-item {
+    text-align: center;
+}
+
+.overview-label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.overview-value {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+/* Case sections */
+
+.case-section {
+    padding: 64px 0;
+}
+
+.case-section.alt {
+    background: #f8fafc;
+}
+
+.case-section h2 {
+    text-align: left;
+    font-size: 1.8rem;
+    margin-bottom: 32px;
+}
+
+/* Problem block */
+
+.problem-block {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 12px;
+    padding: 32px;
+}
+
+.problem-block p {
+    margin-bottom: 16px;
+    color: #334155;
+}
+
+.problem-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.problem-block li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+    color: #334155;
+}
+
+.problem-block li::before {
+    content: "\2717";
+    position: absolute;
+    left: 0;
+    color: #dc2626;
+    font-weight: 700;
+}
+
+/* Work steps */
+
+.work-step {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.work-step:last-child {
+    margin-bottom: 0;
+}
+
+.work-step-num {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: #2563eb;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.work-step-content {
+    flex: 1;
+}
+
+.work-step-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.work-step-content > p {
+    color: #475569;
+    margin-bottom: 16px;
+}
+
+/* Tech detail blocks */
+
+.tech-detail {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 24px;
+    margin-top: 16px;
+}
+
+.tech-detail h4 {
+    font-size: 0.95rem;
+    color: #2563eb;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.tech-detail ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tech-detail li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    color: #334155;
+}
+
+.tech-detail li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-weight: 700;
+}
+
+/* Architecture diagram */
+
+.arch-diagram {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.arch-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.arch-row-bottom {
+    margin-bottom: 0;
+}
+
+.arch-arrow {
+    font-size: 1.5rem;
+    color: #94a3b8;
+    flex-shrink: 0;
+}
+
+.arch-block {
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: center;
+    min-width: 180px;
+    flex: 1;
+}
+
+.arch-block-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.arch-block-desc {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.arch-plc {
+    background: #fef2f2;
+    border: 2px solid #fecaca;
+    color: #991b1b;
+}
+
+.arch-driver {
+    background: #eff6ff;
+    border: 2px solid #bfdbfe;
+    color: #1e40af;
+}
+
+.arch-api {
+    background: #f0fdf4;
+    border: 2px solid #bbf7d0;
+    color: #166534;
+}
+
+.arch-hmi {
+    background: #eff6ff;
+    border: 2px solid #bfdbfe;
+    color: #1e40af;
+}
+
+.arch-1c {
+    background: #fefce8;
+    border: 2px solid #fde68a;
+    color: #854d0e;
+}
+
+.arch-monitor {
+    background: #f5f3ff;
+    border: 2px solid #ddd6fe;
+    color: #5b21b6;
+}
+
+/* CTA */
+
+.case-cta {
+    background: #0f172a !important;
+    color: #fff;
+    padding: 64px 0;
+    text-align: center;
+}
+
+.case-cta h2 {
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.case-cta p {
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto 32px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .case-hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .work-step {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .arch-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .arch-arrow {
+        transform: rotate(90deg);
+    }
+
+    .arch-block {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-section h2 {
+        font-size: 1.4rem;
+    }
+}

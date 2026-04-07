@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс: адаптация китайских этикеточных станков — ПромАдапт</title>
+    <meta name="description" content="Полная адаптация китайских этикеточных станков: русификация HMI, написание драйверов, интеграция с 1С, документация. Подробный кейс ПромАдапт.">
+    <meta name="keywords" content="адаптация китайского оборудования, этикеточный станок, русификация HMI, реверс-инжиниринг PLC, драйверы промышленного оборудования, интеграция 1С">
+    <meta name="author" content="ПромАдапт">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://promadapt.ru/case-1.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Кейс: адаптация китайских этикеточных станков — ПромАдапт">
+    <meta property="og:description" content="Реверс-инжиниринг проприетарного протокола, русификация HMI, написание драйверов на Rust, интеграция с 1С.">
+    <meta property="og:url" content="https://promadapt.ru/case-1.html">
+    <meta property="og:image" content="https://promadapt.ru/img.png">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="ПромАдапт">
+
+    <link rel="icon" type="image/png" href="img.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="case.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-inner">
+        <a href="index.html" class="logo">
+            <img src="img.png" alt="ПромАдапт" class="logo-img">
+            <span class="logo-text">ПромАдапт</span>
+        </a>
+        <div class="nav-right">
+            <span class="nav-contact-label">Контакты:</span>
+            <a href="mailto:promadapt@rambler.ru" class="nav-contact">promadapt@rambler.ru</a>
+            <a href="https://t.me/prom_adapt" class="nav-contact">Telegram</a>
+            <a href="index.html#contact" class="nav-btn">Обсудить проект</a>
+        </div>
+    </div>
+</nav>
+
+<section class="case-hero">
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; На главную</a>
+        <h1>Адаптация китайских этикеточных станков</h1>
+        <p class="case-hero-sub">Полный цикл: от реверс-инжиниринга проприетарного протокола до русского интерфейса и интеграции с 1С</p>
+    </div>
+</section>
+
+<section class="case-overview">
+    <div class="container">
+        <div class="overview-grid">
+            <div class="overview-item">
+                <span class="overview-label">Оборудование</span>
+                <span class="overview-value">Этикеточные станки (Китай)</span>
+            </div>
+            <div class="overview-item">
+                <span class="overview-label">Контроллер</span>
+                <span class="overview-value">PLC с проприетарным протоколом</span>
+            </div>
+            <div class="overview-item">
+                <span class="overview-label">Интерфейс связи</span>
+                <span class="overview-value">COM-порт</span>
+            </div>
+            <div class="overview-item">
+                <span class="overview-label">Результат</span>
+                <span class="overview-value">Полностью русифицированный станок</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="case-section">
+    <div class="container">
+        <h2>Проблема</h2>
+        <div class="problem-block">
+            <p>Заказчик приобрёл партию этикеточных станков китайского производства. Станки управляются PLC-контроллером через проприетарный последовательный протокол. Ситуация на момент обращения:</p>
+            <ul>
+                <li>Интерфейс управления полностью на китайском языке</li>
+                <li>Документация от производителя отсутствует</li>
+                <li>Протокол связи с контроллером не документирован — стандартные решения (Modbus, OPC UA) не подходят</li>
+                <li>Нет интеграции с учётными системами — все данные вводятся вручную</li>
+                <li>Операторы работают методом тыка, часто допускают ошибки</li>
+                <li>Техническая поддержка от производителя не оказывается</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="case-section alt">
+    <div class="container">
+        <h2>Что мы сделали</h2>
+
+        <div class="work-step">
+            <div class="work-step-num">1</div>
+            <div class="work-step-content">
+                <h3>Реверс-инжиниринг штатного ПО и протокола</h3>
+                <p>Протокол контроллера проприетарный и не документирован — стандартные промышленные протоколы не подходят. Мы провели полный реверс-инжиниринг штатного бинарника: дизассемблировали программу управления, восстановили логику работы, формат команд и карту регистров контроллера. На выходе — полное понимание того, как устроен станок изнутри.</p>
+            </div>
+        </div>
+
+        <div class="work-step">
+            <div class="work-step-num">2</div>
+            <div class="work-step-content">
+                <h3>Написание драйверов</h3>
+                <p>На основе восстановленного протокола написали полноценный драйвер для управления станком на языке Rust — низкоуровневый системный язык с гарантиями безопасности памяти, без сборщика мусора. Идеален для промышленного ПО: работает напрямую с COM-портом, не зависает, не течёт по памяти, потребляет минимум ресурсов.</p>
+                <p>Конвейер, моторы подачи и выдачи этикетки, реле, датчик продукции, настройка скорости и задержек — всё управляется программно.</p>
+            </div>
+        </div>
+
+        <div class="work-step">
+            <div class="work-step-num">3</div>
+            <div class="work-step-content">
+                <h3>Новый русский интерфейс (HMI)</h3>
+                <p>Вместо китайской штатной программы написали полностью новый веб-интерфейс на русском языке. Открывается в браузере на любом устройстве в локальной сети — компьютер, планшет, телефон.</p>
+                <div class="tech-detail">
+                    <h4>Возможности интерфейса</h4>
+                    <ul>
+                        <li>Управление всеми узлами станка в один клик</li>
+                        <li>Настройка параметров через понятные формы</li>
+                        <li>Мониторинг состояния станка в реальном времени</li>
+                        <li>Загрузка и предпросмотр этикеток</li>
+                        <li>Автопечать при срабатывании датчика продукции</li>
+                        <li>Управление очередью печати и выбор принтера</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="work-step">
+            <div class="work-step-num">4</div>
+            <div class="work-step-content">
+                <h3>Интеграция с 1С</h3>
+                <p>Станок подключен к учётной системе. Данные о печати, тиражах и параметрах станка автоматически попадают в 1С без ручного ввода.</p>
+            </div>
+        </div>
+
+        <div class="work-step">
+            <div class="work-step-num">5</div>
+            <div class="work-step-content">
+                <h3>Документация</h3>
+                <p>Составили полную эксплуатационную документацию на русском языке: описание всех режимов работы, инструкции для операторов, справочник команд контроллера, схема подключения.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="case-section">
+    <div class="container">
+        <h2>Архитектура решения</h2>
+        <div class="arch-diagram">
+            <div class="arch-row">
+                <div class="arch-block arch-plc">
+                    <div class="arch-block-title">PLC контроллер</div>
+                    <div class="arch-block-desc">Проприетарный протокол<br>COM-порт</div>
+                </div>
+                <div class="arch-arrow">&rarr;</div>
+                <div class="arch-block arch-driver">
+                    <div class="arch-block-title">Драйвер</div>
+                    <div class="arch-block-desc">Rust, асинхронный обмен</div>
+                </div>
+                <div class="arch-arrow">&rarr;</div>
+                <div class="arch-block arch-api">
+                    <div class="arch-block-title">REST API</div>
+                    <div class="arch-block-desc">HTTP-сервер<br>Полное управление станком</div>
+                </div>
+            </div>
+            <div class="arch-row arch-row-bottom">
+                <div class="arch-block arch-hmi">
+                    <div class="arch-block-title">Веб-интерфейс</div>
+                    <div class="arch-block-desc">Браузер, русский язык</div>
+                </div>
+                <div class="arch-block arch-1c">
+                    <div class="arch-block-title">1С</div>
+                    <div class="arch-block-desc">Автоматическая выгрузка</div>
+                </div>
+                <div class="arch-block arch-monitor">
+                    <div class="arch-block-title">Мониторинг</div>
+                    <div class="arch-block-desc">Датчики, события, статус</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="case-section alt">
+    <div class="container">
+        <h2>Результат</h2>
+        <div class="comparison">
+            <div class="comp-col comp-before">
+                <h3>Было</h3>
+                <ul>
+                    <li>Интерфейс на китайском языке</li>
+                    <li>Нет документации</li>
+                    <li>Операторы работают наугад</li>
+                    <li>Протокол неизвестен</li>
+                    <li>Ручной ввод данных в 1С</li>
+                    <li>Нет поддержки от производителя</li>
+                </ul>
+            </div>
+            <div class="comp-col comp-after">
+                <h3>Стало</h3>
+                <ul>
+                    <li>Полностью русский веб-интерфейс</li>
+                    <li>Полная документация на русском</li>
+                    <li>Операторы работают уверенно</li>
+                    <li>Протокол полностью документирован</li>
+                    <li>Автоматическая выгрузка в 1С</li>
+                    <li>Поддержка и доработки от нас</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="case-cta">
+    <div class="container">
+        <h2>Похожая задача?</h2>
+        <p>Если у вас оборудование с китайским интерфейсом, нестандартным протоколом или без документации — мы поможем.</p>
+        <a href="index.html#contact" class="btn">Обсудить проект</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-inner">
+        <div class="footer-logo">
+            <img src="img.png" alt="ПромАдапт" class="footer-logo-img">
+            <span>ПромАдапт</span>
+        </div>
+        <p>Адаптация и цифровизация промышленного оборудования · <a href="mailto:promadapt@rambler.ru">promadapt@rambler.ru</a> · <a href="https://t.me/prom_adapt">Telegram</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

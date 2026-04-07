@@ -64,6 +64,27 @@ h3 {
     font-weight: 700;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-contact-label {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.nav-contact {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.nav-contact:hover {
+    color: #fff;
+}
+
 .nav-btn {
     background: #2563eb;
     color: #fff;
@@ -320,6 +341,18 @@ section:nth-child(even) {
     font-size: 0.95rem;
 }
 
+.case-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.case-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
 /* Why us */
 
 .why-card {
@@ -526,6 +559,11 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
+    .nav-contact,
+    .nav-contact-label {
+        display: none;
+    }
+
     .nav-btn {
         padding: 8px 16px;
         font-size: 0.85rem;
