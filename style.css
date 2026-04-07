@@ -71,18 +71,30 @@ h3 {
 }
 
 .nav-contact-label {
-    color: #64748b;
+    color: #94a3b8;
     font-size: 0.9rem;
+    margin-right: -8px;
 }
 
 .nav-contact {
-    color: #94a3b8;
+    color: #60a5fa;
     text-decoration: none;
     font-size: 0.9rem;
 }
 
+.nav-contact:visited {
+    color: #60a5fa;
+}
+
 .nav-contact:hover {
-    color: #fff;
+    color: #93bbfc;
+    text-decoration: underline;
+}
+
+.nav-sep {
+    color: #475569;
+    font-size: 0.9rem;
+    margin: 0 -10px;
 }
 
 .nav-btn {
@@ -560,7 +572,8 @@ footer a:hover {
 
 @media (max-width: 480px) {
     .nav-contact,
-    .nav-contact-label {
+    .nav-contact-label,
+    .nav-sep {
         display: none;
     }
 
